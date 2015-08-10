@@ -11,7 +11,7 @@ Example:
   <li>Pitaya</li>
 </ul>
 
-var input = $("input[type='text']").domFilterText('#fruits');
+var input = $("input[type='text']").domFilterText($('#fruits'));
 ```
 Then you are able to filter the fruits based on the text you type in the input box.
 Enjoy.
