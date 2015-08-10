@@ -21,9 +21,9 @@ var input = $("input[type='text']").domFilterText({
 
 **Options:**
 
-- filterTarget: Elements you want to filter. The filter also works on the children nodes of the elements.
-- filterProperty: Property you want to filter. It can be 'id', 'class' or other node properties. It can even be plain html text.
-- caseSensitive: Self explaining.
+- **filterTarget:** Elements you want to filter. The filter also works on the children nodes of the elements.
+- **filterProperty:** Property you want to filter. It can be 'id', 'class' or other node properties. It can even be plain html text.
+- **caseSensitive:** Self explaining.
 
 
 Then you are able to filter the fruits based on the text you type in the input box.
