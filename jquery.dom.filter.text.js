@@ -3,17 +3,17 @@
     $.fn.domFilterText = function (opts) {
         var opts = $.extend(true, {}, $.fn.domFilterText.defaults, opts);
 
-        var addData = function (targets) {
+        var cacheCss = function (targets) {
             targets.each(function () {
                 $(this).data('display', $(this).css('display'));
             });
 
             if (targets.children().length) {
-                addData(targets.children());
+                cacheCss(targets.children());
             }
         }
 
-        addData(opts.filterTarget);
+        cacheCss(opts.filterTarget);
 
         return this.each(function () {
             if (this.nodeName.toLowerCase() !== 'input' || this.type.toLowerCase() !== 'text') {
