@@ -28,3 +28,6 @@ var input = $("input[type='text']").domFilterText({ filterTarget: $('#fruits') }
 Then you are able to filter the fruits based on the text you type in the input box.
 
 Enjoy.
+
+## License
+[The MIT License (MIT)](http://opensource.org/licenses/MIT)
