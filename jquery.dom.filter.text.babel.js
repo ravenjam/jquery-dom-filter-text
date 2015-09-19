@@ -1,11 +1,12 @@
 (function($) {
 
     $.fn.domFilterText = function (options) {
+        let self = this;
         let opts = $.extend(true, {}, $.fn.domFilterText.defaults, options);
 
         let cacheCss = (targets) => {
-            targets.each(i => {
-                $(this).data('display', $(this).css('display'));
+            targets.each((i, el) => {
+                $(el).data('display', $(el).css('display'));
             });
 
             if (targets.children().length) {
@@ -15,27 +16,27 @@
 
         cacheCss(opts.filterTarget);
 
-        return this.each(i => {
-            if (this.nodeName.toLowerCase() !== 'input' || this.type.toLowerCase() !== 'text') {
-                console.warn(`(this.id ? this.id : 'Node') type is invalid, use <input type='text'> instead.`);
+        return self.each((i, el) => {
+            if (el.nodeName.toLowerCase() !== 'input' || el.type.toLowerCase() !== 'text') {
+                console.warn(`(el.id ? el.id : 'Node') type is invalid, use <input type='text'> instead.`);
                 return false;
             }
 
-            $(this).on('keyup', (e) => {
+            $(self).on('keyup', (e) => {
                 let filterVal = $(e.target).val();
 
                 let filter = (targets) => {
-                    targets.each( i => {
-                        $(this).css('display', $(this).data('display'));
+                    targets.each((i, el) => {
+                        $(el).css('display', $(el).data('display'));
                     });
 
-                    let targetRemove = targets.filter(() => {
+                    let targetRemove = targets.filter((i, el) => {
                         let comparator = '';
 
                         if (opts.filterProperty === 'html') {
-                            comparator = $(this).html();
+                            comparator = $(el).html();
                         } else {
-                            comparator = $(this).filterProperty;
+                            comparator = $(el).filterProperty;
                         }
 
                         if (opts.caseSensitive) {
