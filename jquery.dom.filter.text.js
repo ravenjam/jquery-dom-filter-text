@@ -1,7 +1,7 @@
 (function($) {
 
-    $.fn.domFilterText = function (opts) {
-        var opts = $.extend(true, {}, $.fn.domFilterText.defaults, opts);
+    $.fn.domFilterText = function (options) {
+        var opts = $.extend(true, {}, $.fn.domFilterText.defaults, options);
 
         var cacheCss = function (targets) {
             targets.each(function () {
@@ -11,7 +11,7 @@
             if (targets.children().length) {
                 cacheCss(targets.children());
             }
-        }
+        };
 
         cacheCss(opts.filterTarget);
 
