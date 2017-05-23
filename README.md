@@ -25,7 +25,7 @@ Include 'jquery-dom-filter-text.js' or 'jquery-dom-filter-text.min.js'.
 var input = $("input[type='text']").domFilterText({ filterTarget: $('#fruits') });
 ```
 
-Then you are able to filter the fruits based on the fruit you type in the input box.
+Then you are able to filter the fruits based on the fruit you typed in the input box.
 
 Enjoy.
 
